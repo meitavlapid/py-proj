@@ -7,3 +7,4 @@ django-filter
 psycopg2
 Pillow
 django-taggit
+gunicorn
