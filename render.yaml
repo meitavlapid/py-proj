@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: django-backend
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn blog.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        value: your_secret_key_here
+      - key: DEBUG
+        value: "False"
+      - key: DB_NAME
+        value: your_db_name
+      - key: DB_USER
+        value: your_db_user
+      - key: DB_PASSWORD
+        value: your_db_password
+    buildFilter:
+      paths:
+        - blog/**/*
+        - requirements.txt
+
+  - type: web
+    name: blog-frontend
+    env: static
+    plan: free
+    buildCommand: "cd blog-frontend && npm install && npm run build"
+    staticPublishPath: "blog-frontend/dist"
+    buildFilter:
+      paths:
+        - blog-frontend/**/*
