@@ -2,7 +2,6 @@ services:
   - type: web
     name: django-backend
     env: python
-    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn blog.wsgi:application"
     envVars:
