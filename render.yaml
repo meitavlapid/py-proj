@@ -24,7 +24,6 @@ services:
   - type: web 
     name: blog-frontend
     env: static 
-    plan: free
     buildCommand: "cd blog-frontend && npm install && npm run build"
     staticPublishPath: "blog-frontend/dist"
     buildFilter:
