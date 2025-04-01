@@ -6,4 +6,4 @@ django-cors-headers
 django-filter
 psycopg2
 Pillow
-taggit
+django-taggit
