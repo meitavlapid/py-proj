@@ -56,7 +56,7 @@ python manage.py runserver
 # התקנת צד לקוח
 cd frontend
 npm install
-npm run dev
+npm start
 
 
 
